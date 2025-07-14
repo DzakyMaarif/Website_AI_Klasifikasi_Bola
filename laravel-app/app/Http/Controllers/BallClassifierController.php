@@ -26,7 +26,7 @@ class BallClassifierController extends Controller
         // Kirim ke API Python
         $response = Http::attach(
             'image', file_get_contents($image), $image->getClientOriginalName()
-        )->post('http://localhost:5000/api/predict');
+        )->post('http://localhost/api/predict');
 
         if ($response->successful()) {
             $result = $response->json();
